@@ -1,5 +1,6 @@
 package flixel.graphics.tile;
 
+
 import flixel.util.FlxColor;
 import flixel.FlxCamera;
 import flixel.graphics.frames.FlxFrame;
@@ -128,6 +129,7 @@ class FlxDrawQuadsItem extends FlxDrawBaseItem<FlxDrawQuadsItem>
 			return;
 
 		var shader = shader != null ? shader : graphics.shader;
+
 		if (shader == null || graphics == null || shader.bitmap == null || graphics.bitmap == null)
 			return;
 		shader.bitmap.input = graphics.bitmap;
@@ -153,6 +155,7 @@ class FlxDrawQuadsItem extends FlxDrawBaseItem<FlxDrawQuadsItem>
 		#end
 		camera.canvas.graphics.beginShaderFill(shader);
 		camera.canvas.graphics.drawQuads(rects, null, transforms);
+
 		#if ANTIALIASING_DEBUG
 		if (!antialiasing)
 		{
@@ -166,16 +169,16 @@ class FlxDrawQuadsItem extends FlxDrawBaseItem<FlxDrawQuadsItem>
 			#end
 		}
 		#end
-		
+
 		#if DRAW_CALLS_DEBUG
 		var drawCalls = FlxDrawBaseItem.drawCalls;
-		
+
 		while (randColors[drawCalls] == null)
 		{
 			var color = FlxColor.fromRGB(Std.int(Math.random() * 255), Std.int(Math.random() * 255), Std.int(Math.random() * 255), 0x40);
 			randColors.push(new openfl.display.BitmapData(1, 1, true, color));
 		}
-		
+
 		#if (openfl > "8.7.0")
 		camera.canvas.graphics.overrideBlendMode(blend);
 		#end
