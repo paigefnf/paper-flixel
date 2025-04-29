@@ -229,7 +229,11 @@ class FlxArrayUtil
 
 	public static inline function contains<T>(array:Array<T>, element:T):Bool
 	{
+		#if (haxe >= "4.0.5")
+		return array.contains(element);
+		#else
 		return array.indexOf(element) != -1;
+		#end
 	}
 
 	/**
