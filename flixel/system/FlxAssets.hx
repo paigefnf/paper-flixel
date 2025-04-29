@@ -208,7 +208,7 @@ class FlxAssets
 	#end
 	#if (!macro || doc_gen)
 	// fonts
-	public static var FONT_DEFAULT:String = "Consolas Bold";
+	public static var FONT_DEFAULT:String = "Consolab";
 	public static var FONT_DEBUGGER:String = "Monsterrat";
 
 	public static function drawLogo(graph:Graphics):Void
